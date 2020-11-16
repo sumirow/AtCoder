@@ -1,4 +1,4 @@
-//1
+//A 20201115
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -14,7 +14,18 @@ int main(){
     cout << y << endl;
 }
 
-//3
+//B 20201116
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+	double sx,sy,gx,gy;
+	scanf("%lf%lf%lf%lf",&sx,&sy,&gx,&gy);
+	printf("%.10f\n",(sx*gy+gx*sy)/(sy+gy));
+}
+
+
+//B 20201115
 #include <bits/stdc++.h>
 using ll = int64_t;
 using namespace std;
