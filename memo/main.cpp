@@ -33,3 +33,6 @@ int main(){
      }
    }while(next_permutation(v.begin(),v.end()));
 }
+
+//最大値
+max(a,b)

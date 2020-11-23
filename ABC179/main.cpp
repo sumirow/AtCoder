@@ -47,3 +47,18 @@ int main(){
 	cout << c << endl;
 
 }
+
+//20201122 C
+#include <bits/stdc++.h>
+using ll = int64_t;
+using namespace std;
+
+int main(){
+	ll n;
+	ll ans = 0;
+	cin >> n;
+    for(ll i=1; i<=n; i++){
+        ans += (n-1)/i;
+	}
+	cout << ans << endl;
+}
