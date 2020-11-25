@@ -36,4 +36,29 @@ int main(){
 	cout << ans << endl;
 }
 
+20201124 CHAR_BIT#include <bits/stdc++.h>
+using ll = int64_t;
+using namespace std;
+
+int main(){
+    ll n;
+	cin >> n;
+	ll a[n];
+	ll sum = 0;
+	int mod = 1000000007;
+	for (int i = 0; i<n; i++) {
+		cin >> a[i];
+        sum += a[i];
+		sum %= mod;
+	}
+    long ans = 0;
+	for (int i = 0; i < n; i++)
+	{
+		sum -= a[i];
+		if (sum < 0) sum += mod;
+		ans += a[i] * sum;
+		ans %= mod;
+	}
+	cout << ans << endl;
+}
 
