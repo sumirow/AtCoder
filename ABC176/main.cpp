@@ -1,64 +1,20 @@
-//20201124 A
+//20201128 B
 #include <bits/stdc++.h>
 using ll = int64_t;
 using namespace std;
 
+char s[200010];
 int main(){
-    ll d, t, s;
-    string c = "No";
-	cin >> d >> t >> s;
-    if(d <= s*t){
-        c = "Yes";
-	}
-    
-	cout << c << endl;
+    scanf("%s",s);
+    int len=strlen(s);
+    int sum=0;
+    for(int i=0;i<len;i++)sum+=s[i]-'0';
+    if(sum%9==0){
+        puts("Yes");
+    }else{
+        puts("No");
+    }
 }
 
-//20201124 B
-#include <bits/stdc++.h>
-using ll = int64_t;
-using namespace std;
 
-int main(){
-    string s, t;
-	cin >> s >> t;
-    int ans = t.size();
-	for (int i = 0; i<= s.size() - t.size(); i++){
-		int d = 0;
-		for (int j = 0; j<t.size(); j++){
-			if(t[j] != s[i + j]){
-				d++;
-			}
-		}
-		ans = min(ans, d);
-	}
-    
-	cout << ans << endl;
-}
-
-20201124 CHAR_BIT#include <bits/stdc++.h>
-using ll = int64_t;
-using namespace std;
-
-int main(){
-    ll n;
-	cin >> n;
-	ll a[n];
-	ll sum = 0;
-	int mod = 1000000007;
-	for (int i = 0; i<n; i++) {
-		cin >> a[i];
-        sum += a[i];
-		sum %= mod;
-	}
-    long ans = 0;
-	for (int i = 0; i < n; i++)
-	{
-		sum -= a[i];
-		if (sum < 0) sum += mod;
-		ans += a[i] * sum;
-		ans %= mod;
-	}
-	cout << ans << endl;
-}
 
