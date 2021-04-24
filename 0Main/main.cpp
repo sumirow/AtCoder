@@ -1,54 +1,41 @@
 #ifndef INCLUDED_MAIN
 #define INCLUDED_MAIN
 
-#include __FILE__ 
+#include __FILE__
 
 using namespace std;
 
 int main()
 {
-    int n, m, t;
-	//const int a[];
-	//const int b[];
+    int H, W;
+    cin >> H >> W;
+    vector<vector<int>> a(H, vector<int>(W));
+    int inpt = 0;
+    int mini = 101;
+    for(int i=0; i<H; i++){
+        for(int j=0; j<W; j++){
+            cin >> inpt;
+            a.at(i).at(j) = inpt;
+            if(mini > inpt){
+                mini = inpt;
+            }
+        }
+    }
+    int ans = 0;
+    for(int i=0; i<H; i++){
+        for(int j=0; j<W; j++){
+            ans = ans + (a.at(i).at(j) - mini);
+        }
+    }
+    cout << ans << endl;
 
-	cin >> n >> m >> t;
-	int c = 0;
-	int d = n;
-	int f = 1;
-	for (int i = 0; i < m; ++i){
-		int a;
-		int b;
-		cin >> a >> b;
-		int l = a - c;
-		n = n -l;
-		if (n <= 0){
-			f = 0;
-		}
-		n = n + b - a;
-		c = b;
-		//cout << i+1 << "回目 " << l << " " << b -a << " " <<  n << endl;
-		if(n>d){
-			n=d;
-		}
 
-		
-		
-	}
-	n = n - (t - c);
-	//cout << "最終残量 " << n << endl;
-	if(f == 0){
-		n = 0;
-	}
-    if(n > 0){
-	    cout << "Yes" << endl;
-	}else{
-		cout << "No" << endl;
-	}
 
-    
+
+
 }
 
-#else  
+#else
 
 // ↓template↓
 #include <iostream>
@@ -99,4 +86,4 @@ double calcDist(double x1, double y1, double x2, double y2){
 
 // ↑template↑
 
-#endif 
+#endif
