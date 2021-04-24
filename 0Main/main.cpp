@@ -7,55 +7,47 @@ using namespace std;
 
 int main()
 {
-    int n, m, t;
-	//const int a[];
-	//const int b[];
+    string S;
+	int N, Q;
+	cin >> N >> S >> Q;
+	int t;
+	int a;
+	int b;
+	vector<char> s(2*N);
+	vector<char> sd(2*N);
+	for (int i=0; i<2*N; i++){
+		s.at(i) = S.at(i);
+		sd.at(i) = S.at(i);
+	}
 
-	cin >> n >> m >> t;
-	int c = 0;
-	int d = n;
-	int f = 1;
-	for (int i = 0; i < m; ++i){
-		int a;
-		int b;
-		cin >> a >> b;
-		int l = a - c;
-		n = n -l;
-		if (n <= 0){
-			f = 0;
+	string Sa, Sb;
+	int sa, sb;
+	for(int i=0; i<Q; i++){
+		cin >> t >> a >> b;
+			if(t == 1){
+			sa = a-1;
+			sb = b-1;
+			s.at(sa) = sd.at(sb);
+     		s.at(sb) = sd.at(sa);
+
+		}else if(t == 2){
+			for(int i = 0; i<N; i++){
+				s.at(i) = sd.at(i+N-1);
+				s.at(i+N-1)=sd.at(i);
+			}
+
 		}
-		n = n + b - a;
-		c = b;
-		//cout << i+1 << "回目 " << l << " " << b -a << " " <<  n << endl;
-		if(n>d){
-			n=d;
-		}
-
-		
-		
 	}
-	n = n - (t - c);
-	//cout << "最終残量 " << n << endl;
-	if(f == 0){
-		n = 0;
-	}
-    if(n > 0){
-	    cout << "Yes" << endl;
-	}else{
-		cout << "No" << endl;
+	for(int i=0; i<2*N; i++){
+		cout << s.at(i);
 	}
 
-    
 }
 
 #else  
 
 // ↓template↓
-#include <iostream>
-#include <assert.h>
-#include <stdio.h>
-#include<cmath>
-#include<vector>
+#include <bits/stdc++.h>
 
 long long ll;
 
