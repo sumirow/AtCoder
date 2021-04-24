@@ -7,48 +7,43 @@ using namespace std;
 
 int main()
 {
+    //B
+    int H, W;
+    cin >> H >> W;
+    vector<vector<int>> a(H, vector<int>(W));
+    int inpt = 0;
+    int mini = 101;
+    for(int i=0; i<H; i++){
+        for(int j=0; j<W; j++){
+            cin >> inpt;
+            a.at(i).at(j) = inpt;
+            if(mini > inpt){
+                mini = inpt;
+            }
+        }
+    }
+    int ans = 0;
+    for(int i=0; i<H; i++){
+        for(int j=0; j<W; j++){
+            ans = ans + (a.at(i).at(j) - mini);
+        }
+    }
+    cout << ans << endl;
 
-    string S;
-	int N, Q;
-	cin >> N >> S >> Q;
-	int t;
-	int a;
-	int b;
-	vector<char> s(2*N);
-	vector<char> sd(2*N);
-	for (int i=0; i<2*N; i++){
-		s.at(i) = S.at(i);
-		sd.at(i) = S.at(i);
-	}
 
-	string Sa, Sb;
-	int sa, sb;
-	for(int i=0; i<Q; i++){
-		cin >> t >> a >> b;
-			if(t == 1){
-			sa = a-1;
-			sb = b-1;
-			s.at(sa) = sd.at(sb);
-     		s.at(sb) = sd.at(sa);
 
-		}else if(t == 2){
-			for(int i = 0; i<N; i++){
-				s.at(i) = sd.at(i+N-1);
-				s.at(i+N-1)=sd.at(i);
-			}
 
-		}
-	}
-	for(int i=0; i<2*N; i++){
-		cout << s.at(i);
-	}
 
 }
 
 #else
 
 // ↓template↓
-#include <bits/stdc++.h>
+#include <iostream>
+#include <assert.h>
+#include <stdio.h>
+#include<cmath>
+#include<vector>
 
 long long ll;
 
