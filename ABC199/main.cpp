@@ -67,6 +67,81 @@ int main()
 	cout << ans;
 }
 
+//c
+using namespace std;
+
+int main()
+{
+
+    string S;
+	int N, Q;
+	cin >> N >> S >> Q;
+	int t;
+	int a;
+	int b;
+    bool tc = true;
+	char Sa, Sb;
+	string ssa, ssb;
+	
+	int sa, sb;
+	for(int i=0; i<Q; i++){
+		cin >> t >> a >> b;
+			if(t == 1){
+				if(tc==true){
+
+			        sa = a-1;
+		         	sb = b-1;
+					Sa = S.at(sb);
+					Sb = S.at(sa);
+		         	S.at(sa) = Sa;
+     	        	S.at(sb) = Sb;
+				}else if(tc == false){
+
+			        sa = a-1;
+		         	sb = b-1;
+					 if(sa<N){
+						 sa = sa+N;
+
+					 }else{
+						 sa = sa-N;
+					 }
+					 
+					 if(sb<N){
+						 sb = sb+N;
+
+					 }else{
+						 sb = sb-N;
+					 }
+
+					Sa = S.at(sb);
+					Sb = S.at(sa);
+		         	S.at(sa) = Sa;
+     	        	S.at(sb) = Sb;
+				}
+
+
+		}else if(t == 2){
+		
+			if(tc==true){
+				tc = false;
+			}else if(tc==false){
+				tc = true;
+			}
+
+		}
+	}
+	if(tc){
+		cout << S;
+	}else{
+		ssa = S.substr(0, N);
+		ssb = S.substr(N, S.size()-1);
+		S = ssb+ssa;
+		cout << S;
+	}
+
+
+}
+
 #else  
 
 // ↓template↓

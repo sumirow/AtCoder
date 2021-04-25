@@ -6,19 +6,49 @@
 
 using namespace std;
 
+//B
 int main()
 {
 
+	string N;
+	cin >> N;
+	string Na, Nb;
+	string ans = "No";
+	string Nd = N;
+	for(int i=0; i<Nd.size(); i++){
+		if(N.size()%2==0){
+			Na = N.substr(0, N.size()/2);
+			Nb = N.substr(N.size()/2, N.size()-1);
+		}else{
+			Na = N.substr(0, N.size()/2);
+			Nb = N.substr(N.size()/2+1, N.size()-1);
+		}
+		reverse(Nb.begin(), Nb.end());
+		if(Na == Nb){
+			ans = "Yes";
+			break;
+		}
+		N = "0" + N;
+	}
+	cout << ans << endl;
+
+
+
+}
+
+//C
+int main()
+{
 	double R, X, Y;
 	cin >> R >> X >> Y;
     double D = sqrt(X * X + Y * Y);
     int ans = ceil(D / R);
     if (ans == 1 && D != R) ans++;
 	cout << ans;
-
-
-
 }
+
+
+
 
 #else
 
