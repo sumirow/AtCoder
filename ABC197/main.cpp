@@ -6,6 +6,7 @@
 
 using namespace std;
 
+//B
 int main()
 {
 	int h, w, x, y;
@@ -55,6 +56,9 @@ int main()
     cout << ans;
 
 }
+
+
+
 
 #else
 
