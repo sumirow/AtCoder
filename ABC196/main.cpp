@@ -6,6 +6,23 @@
 
 using namespace std;
 
+//B
+int main()
+{
+	string n;
+	cin >> n;
+    
+    for(int i=0; i<n.size(); i++){
+        if(n.at(i)=='.'){
+            break;
+        }else{
+            cout << n.at(i);
+        }
+    }
+
+}
+
+//C
 int main()
 {
     long long  N;
@@ -19,6 +36,9 @@ int main()
 
 
 }
+
+
+
 
 #else
 
